@@ -1,4 +1,6 @@
 
+package chapter4
+
 import scala.collection.mutable.Map
 
 object ChecksumAccumulator {
