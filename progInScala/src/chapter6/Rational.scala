@@ -2,9 +2,12 @@ package chapter6
 
 class Rational(n: Int, d: Int) {
   require(d != 0)
+  
   private val g = gcd(n.abs, d.abs)
   val numer: Int = n/g
   val denom: Int = d/g
+  
+//  implicit def intToRational(i: Int): Rational = new Rational(i)
   
   def this(n: Int) = this(n, 1) // auxiliary constructor
   

@@ -15,6 +15,6 @@ object Main {
     println(a + b)
     println(a * b)
     println(a / b)
-    println(3 + d)
+    println(d * 3)
   }
 }
