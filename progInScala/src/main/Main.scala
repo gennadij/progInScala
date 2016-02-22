@@ -1,6 +1,8 @@
 package main
 
 import chapter6.Rational
+import chapter4.ChecksumAccumulator
+import chapter7.ForExpression
 
 object Main {
   
@@ -16,5 +18,14 @@ object Main {
     println(a * b)
     println(a / b)
     println(d * 3)
+    
+    val checkSum = ChecksumAccumulator.calculate("test")
+    
+    println(checkSum)
+    
+    
+    val forExp = new ForExpression
+    
+    forExp.callFor
   }
 }
