@@ -1,9 +1,9 @@
-  package main
+package main
 
 import chapter6.Rational
 import chapter4.ChecksumAccumulator
 import chapter7.ForExpression
-object Main2 {
+object Main {
 	
   println("*****************chapter 6 *************")
   def main(args: Array[String]) = {
