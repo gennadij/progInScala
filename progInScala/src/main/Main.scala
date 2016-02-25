@@ -27,9 +27,5 @@ object Main {
     val forExp = new ForExpression
     
     forExp.callFor
-    
-    
-    
-    
   }
 }
