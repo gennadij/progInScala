@@ -29,9 +29,6 @@ object Main {
     println("**************************")
     val arrayOfFiles = forExp.scalaFiles
     for(file <- arrayOfFiles) println(file)
-    
-    
-    
-    
+    forExp.callFor
   }
 }
