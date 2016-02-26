@@ -3,6 +3,7 @@ package main
 import chapter6.Rational
 import chapter4.ChecksumAccumulator
 import chapter7.ForExpression
+import chapter7.MiltiTable
 
 object Main {
   
@@ -28,7 +29,11 @@ object Main {
     
     forExp.callFor
     
+    val padding = " " * (2)
     
-    //ich habe hier die Aenderung hinzugefuegt.
+    println("Padding: " + padding + ";")
+    
+    
+    println(new MiltiTable().miltiTable)
   }
 }
