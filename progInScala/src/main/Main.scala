@@ -3,6 +3,8 @@ package main
 import chapter6.Rational
 import chapter4.ChecksumAccumulator
 import chapter7.ForExpression
+import chapter7.MiltiTable
+
 object Main {
 	
   println("*****************chapter 6 *************")
@@ -31,5 +33,12 @@ object Main {
     for(file <- arrayOfFiles) println(file)
     
     forExp.callFor
+    
+    val padding = " " * (2)
+    
+    println("Padding: " + padding + ";")
+    
+    
+    println(new MiltiTable().miltiTable)
   }
 }
