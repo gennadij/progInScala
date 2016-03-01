@@ -39,6 +39,36 @@ object Main {
     println("Padding: " + padding + ";")
     
     
-    println(new MiltiTable().miltiTable)
+    //println(new MiltiTable().miltiTable)
+    
+    println("****************chapter 8***************")
+    
+    val someNumbers = List(-11, -10, -5, 0, 5, 10)
+    
+    println("1: " + someNumbers.filter { x => 0 < x })
+    
+    println("2: " + someNumbers.filter { _ < 0 })
+    
+    def fil(a: Int) = a < 0
+    
+    println("3: " + someNumbers.filter { fil(_) })
+    
+    val funktion = fil _
+    
+    println("4: " + someNumbers.filter { funktion(_) })
+    
+    val f = (_: Int) + (_: Int)
+    
+    println(f(3, 5))
+    
+    someNumbers.foreach { println _ }
+    
+    def sum(a: Int, b: Int, c: Int) = a + b + c
+    
+    val funk = sum(1, 2, 5)
+    
+    val paf = sum _
+    
+    println(sum(3, 4 , 15))
   }
 }
