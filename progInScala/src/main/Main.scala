@@ -70,5 +70,21 @@ object Main {
     val paf = sum _
     
     println(sum(3, 4 , 15))
+    
+    println("**********************chapter 8****************")
+    
+    var assertionsEnabled = false
+    val x = 10
+    def byNameAssert(predicate: => Boolean) = 
+      if(assertionsEnabled == !predicate)
+        throw new AssertionError
+        
+    def boolAssert(predicate: Boolean) = 
+      if(assertionsEnabled == !predicate)
+        throw new AssertionError
+        
+    byNameAssert(x / 0 == 0)
+    println("=============")
+//    boolAssert(x / 0 == 0)
   }
 }
