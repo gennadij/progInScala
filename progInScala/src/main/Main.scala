@@ -4,6 +4,9 @@ import chapter6.Rational
 import chapter4.ChecksumAccumulator
 import chapter7.ForExpression
 import chapter7.MiltiTable
+import chapter10.Element
+import chapter10.Element
+import chapter10.Element1
 
 object Main {
 	
@@ -93,5 +96,34 @@ object Main {
     val t = 10
     
     println(speed(time = t, distance = dist))
+    
+    println(sum(3, 4 , 15))
+    
+    println("**********************chapter 8****************")
+    
+    var assertionsEnabled = false
+    val x = 10
+    def byNameAssert(predicate: => Boolean) = 
+      if(assertionsEnabled == !predicate)
+        throw new AssertionError
+        
+    def boolAssert(predicate: Boolean) = 
+      if(assertionsEnabled == !predicate)
+        throw new AssertionError
+        
+//    byNameAssert(x / 0 == 0)
+    println("=============")
+//    boolAssert(x / 0 == 0)
+    
+    println("**********************chapter 10****************")
+    
+    val elem = new Element
+    
+    println(elem.test)
+    elem.demo
+    
+    val elem2 = new Element1
+    
+    print(elem2.test)
   }
 }
