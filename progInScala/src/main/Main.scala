@@ -45,23 +45,23 @@ object Main {
     
     val someNumbers = List(-11, -10, -5, 0, 5, 10)
     
-    println("1: " + someNumbers.filter { x => 0 < x })
+    //println("1: " + someNumbers.filter { x => 0 < x })
     
-    println("2: " + someNumbers.filter { _ < 0 })
+//    println("2: " + someNumbers.filter { _ < 0 })
     
     def fil(a: Int) = a < 0
     
-    println("3: " + someNumbers.filter { fil(_) })
+//    println("3: " + someNumbers.filter { fil(_) })
     
     val funktion = fil _
     
-    println("4: " + someNumbers.filter { funktion(_) })
+//    println("4: " + someNumbers.filter { funktion(_) })
     
     val f = (_: Int) + (_: Int)
     
-    println(f(3, 5))
+//    println(f(3, 5))
     
-    someNumbers.foreach { println _ }
+//    someNumbers.foreach { println _ }
     
     def sum(a: Int, b: Int, c: Int) = a + b + c
     
@@ -69,6 +69,29 @@ object Main {
     
     val paf = sum _
     
-    println(sum(3, 4 , 15))
+//    println(sum(3, 4 , 15))
+    
+    
+    def makeIncreaser(more: Int) = (x: Int) => x + more
+    
+    val inc10 = makeIncreaser(11)
+    
+    println(inc10(15))
+    
+    def makeIncreaser2(more: Int) = (yetMore: Int) => (x:Int) => x + yetMore + more
+    
+    val inc1 = makeIncreaser2(5)
+    
+    val inc2 = inc1(5)
+    
+    println(inc2(10))
+    
+    def speed(distance: Int, time: Int): Int = distance / time
+    
+    val dist = 100
+    
+    val t = 10
+    
+    println(speed(time = t, distance = dist))
   }
 }
