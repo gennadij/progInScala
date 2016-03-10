@@ -4,6 +4,9 @@ import chapter6.Rational
 import chapter4.ChecksumAccumulator
 import chapter7.ForExpression
 import chapter7.MiltiTable
+import chapter10.Element
+import chapter10.Element
+import chapter10.Element1
 
 object Main {
 	
@@ -83,8 +86,18 @@ object Main {
       if(assertionsEnabled == !predicate)
         throw new AssertionError
         
-    byNameAssert(x / 0 == 0)
+//    byNameAssert(x / 0 == 0)
     println("=============")
 //    boolAssert(x / 0 == 0)
+    
+    println("**********************chapter 10****************")
+    
+    val elem = new Element
+    
+    println(elem.test)
+    
+    val elem2 = new Element1
+    
+    print(elem2.test)
   }
 }
