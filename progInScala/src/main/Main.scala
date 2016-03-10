@@ -95,6 +95,7 @@ object Main {
     val elem = new Element
     
     println(elem.test)
+    elem.demo
     
     val elem2 = new Element1
     
