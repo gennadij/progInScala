@@ -7,11 +7,9 @@ import chapter7.MiltiTable
 import chapter10.Element
 import chapter10.Element
 import chapter10.Element
-import chapter10.ArrayElement
-import chapter10.LineElement
 import chapter10.Element
 import chapter10.Element
-import chapter10.UniformElement
+import chapter10.Spiral
 
 object Main {
 	
@@ -123,9 +121,12 @@ object Main {
     println("**********************chapter 10****************")
     
 //    val elem = new Element
-    val e1: Element = new ArrayElement(Array("hello", "world"))
-    val ae: ArrayElement = new LineElement("hello")
-    val e2: Element = ae
-    val e3: Element = new UniformElement('x', 2, 3)
+//    val e1: Element = new ArrayElement(Array("hello", "world"))
+//    val ae: ArrayElement = new LineElement("hello")
+//    val e2: Element = ae
+//    val e3: Element = new UniformElement('x', 2, 3)
+    
+    
+    println(Spiral.spiral(20, 0))
   }
 }
