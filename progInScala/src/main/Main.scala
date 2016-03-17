@@ -10,40 +10,46 @@ import chapter10.Element
 import chapter10.Element
 import chapter10.Element
 import chapter10.Spiral
+import chapter12.BasicIntQueue
+import chapter12.MyQueue
+import chapter12.Filtering
+import chapter12.Incrementing
+import chapter12.Doubling
 
 object Main {
 	
-  println("*****************chapter 6 *************")
+  
   def main(args: Array[String]) = {
+    println("*****************chapter 6 *************")
+    
     val a = new Rational(4, 5)
     val b = new Rational(7, 8)
     val c = new Rational(8, 9)
     val d = new Rational(11, 10)
     
-    println(a + b)
-    println(a * b)
-    println(a / b)
-    println(d * 3)
+//    println(a + b)
+//    println(a * b)
+//    println(a / b)
+//    println(d * 3)
     
     val checkSum = ChecksumAccumulator.calculate("test")
     
-    println(checkSum)
+    //println(checkSum)
     
     println("****************chapter 7***************")
     
     val forExp = new ForExpression
     
-    forExp.grep(".*Name.*")
-    println("**************************")
-    val arrayOfFiles = forExp.scalaFiles
-    for(file <- arrayOfFiles) println(file)
+//    forExp.grep(".*Name.*")
+//    println("**************************")
+//    val arrayOfFiles = forExp.scalaFiles
+//    for(file <- arrayOfFiles) println(file)
     
-    forExp.callFor
+//    forExp.callFor
     
     val padding = " " * (2)
     
-    println("Padding: " + padding + ";")
-    
+//    println("Padding: " + padding + ";")
     
     //println(new MiltiTable().miltiTable)
     
@@ -82,7 +88,7 @@ object Main {
     
     val inc10 = makeIncreaser(11)
     
-    println(inc10(15))
+//    println(inc10(15))
     
     def makeIncreaser2(more: Int) = (yetMore: Int) => (x:Int) => x + yetMore + more
     
@@ -90,7 +96,7 @@ object Main {
     
     val inc2 = inc1(5)
     
-    println(inc2(10))
+//    println(inc2(10))
     
     def speed(distance: Int, time: Int): Int = distance / time
     
@@ -98,9 +104,9 @@ object Main {
     
     val t = 10
     
-    println(speed(time = t, distance = dist))
+//    println(speed(time = t, distance = dist))
     
-    println(sum(3, 4 , 15))
+//    println(sum(3, 4 , 15))
     
     println("**********************chapter 8****************")
     
@@ -115,7 +121,7 @@ object Main {
         throw new AssertionError
         
 //    byNameAssert(x / 0 == 0)
-    println("=============")
+//    println("=============")
 //    boolAssert(x / 0 == 0)
     
     println("**********************chapter 10****************")
@@ -127,6 +133,33 @@ object Main {
 //    val e3: Element = new UniformElement('x', 2, 3)
     
     
-    println(Spiral.spiral(20, 0))
+//    println(Spiral.spiral(20, 0))
+    
+    println("******************chapter 12*******************")
+    
+    val q = new BasicIntQueue
+    
+    q.put(10)
+    q.get()
+    
+    println("*************************************")
+    
+    val q2 = new MyQueue
+    
+    q2.put(10)
+    q2.get()
+    
+    println("*************************************")
+    
+    val q3 = (new BasicIntQueue with Doubling with Filtering with Incrementing)
+    
+    q3.put(-2)
+    println("***********************")
+    q3.put(0)
+    println("***********************")
+    q3.put(1)
+    println("***********************")
+    println("******************chapter 13 *******************")
+    
   }
 }
