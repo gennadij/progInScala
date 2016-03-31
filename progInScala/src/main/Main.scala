@@ -15,6 +15,7 @@ import chapter12.MyQueue
 import chapter12.Filtering
 import chapter12.Incrementing
 import chapter12.Doubling
+import chapter15._
 
 object Main {
 	
@@ -160,6 +161,35 @@ object Main {
     q3.put(1)
     println("***********************")
     println("******************chapter 13 *******************")
+    
+    println("******************chapter 15 *******************")
+    
+    var expr: Int = 0
+    expr match {
+        case 0 => println("zero")
+        case somethingElse => println("not zero: " + somethingElse)
+      }
+    
+    
+    val f1 = new ExprFormater
+    
+    val e1 = BinOp("*", BinOp("/", Number(1), Number(2)),
+                        BinOp("+", Var("x"), Number(1)))
+    val e2 = BinOp("+", BinOp("/", Var("x"), Number(2)),
+                        BinOp("/", Number(1.5), Var("x")))
+    val e3 = BinOp("/", e1, e2)
+    
+    def show(e: Expr) = println(f1.format(e) + "\n\n")
+    
+    for (e <- Array(e1, e2, e3)) show(e)
+    
+    
+    
+    
+    println(expr)
+    println("******************chapter 16 *******************")
+    
+    
     
   }
 }
