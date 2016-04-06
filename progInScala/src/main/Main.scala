@@ -189,6 +189,25 @@ object Main {
     println(expr)
     println("******************chapter 16 *******************")
     
+    def append[T](xs: List[T], ys: List[T]): List[T] =
+     xs match {
+       case List() => ys
+       case x :: xs1 => println(x + " " + xs1 + " " + xs + " " + ys)  
+       x :: append(xs1, ys)
+     }
+    
+    val xs = List(1, 2, 3)
+    val ys = List(4, 5, 6)
+    
+    println(append(xs, ys))
+    
+    val listTuple = List.range(1, 5) flatMap ( 
+        i => List.range(1, i) map (
+            j => (i, j)
+        )
+    )
+        
+    println(listTuple)
     
     
   }
