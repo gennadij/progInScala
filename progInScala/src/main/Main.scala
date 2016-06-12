@@ -1,7 +1,7 @@
 package main
 
 import chapter6.Rational
-import chapter4.ChecksumAccumulator
+import chapter04.ChecksumAccumulator
 import chapter7.ForExpression
 import chapter7.MiltiTable
 import chapter10.Element
@@ -16,7 +16,7 @@ import chapter12.Filtering
 import chapter12.Incrementing
 import chapter12.Doubling
 import chapter15._
-import chapter3.Chapter3
+import chapter03.Chapter3
 
 object Main {
 	
