@@ -1,5 +1,5 @@
 
-package chapter4
+package chapter04
 
 import scala.collection.mutable.Map
 

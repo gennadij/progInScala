@@ -1,6 +1,6 @@
 
 
-package chapter3
+package chapter03
 
 class Chapter3(args: Array[String]) {
   import scala.io.Source
