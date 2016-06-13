@@ -1,0 +1,263 @@
+#include <stdio.h>
+
+/* run this program using the console pauser or add your own getch, system("pause") or input loop */
+
+struct SqrtFromDescrim {
+	int muliplicator;
+	int sqrt;
+};
+
+struct SqrtFromDescrim calcSqrtWithMultip(int zahl);
+struct SqrtFromDescrim calcSqrt(int zahl2);
+struct SqrtFromDescrim calcSquerRoot(int root);
+int calc(int d);
+
+struct SqrtFromDescrim calcSquerRoot(int root){
+	struct SqrtFromDescrim sqrt;
+	
+	if(root < 0){
+		printf("Wurzel ist negativ");
+	}else if(root > 0){
+		sqrt = calcSqrt(root);
+	}
+	
+	return sqrt;
+}
+int calc(int d){
+int i;
+int c = 0; 
+int b = 0;
+for(i = 1; i < d; i = i + 2){
+		b = b + i;
+		c = c + 1;
+		if(d == b){
+			return c;
+		}
+	}
+	if(d < b){
+		return 0;
+	}
+}
+struct SqrtFromDescrim calcSqrtWithMultip(int e){
+	struct SqrtFromDescrim disc;
+	int i;
+	int b = 1;
+	int c = 0;
+	int d = 0;
+	for(i = 3; i < e; i = i + 2){
+		b = b + i;
+		c = e % b;
+		if(c == 0){
+			d = e / b;
+			b = calc(b);
+			disc.muliplicator = b;
+			disc.sqrt = d;
+			break;
+		}
+	}if(c != 0){
+		disc.muliplicator = -1;
+		disc.sqrt = c;
+	}
+	return disc;
+}
+
+struct SqrtFromDescrim calcSqrt(int d){
+	struct SqrtFromDescrim disc;
+	int sqrtWithoutMultiplic = 0;
+	sqrtWithoutMultiplic = calc(d);
+	if(sqrtWithoutMultiplic == 0){
+		disc = calcSqrtWithMultip(d);
+	}else{
+		disc.muliplicator = 0;
+		disc.sqrt = sqrtWithoutMultiplic;
+	}
+	return disc;
+}
+
+int main(int argc, char** argv) {
+	int status = 0;
+	int a = 0;
+	int b = 0;
+	int c = 0;
+	char furtherOrCancel = 'w';
+	struct SqrtFromDescrim root;
+	while(furtherOrCancel == 'w'){
+		printf("Diese Programm berechnet die Wurzel mit dem exakten Lösung\n\n");
+		//TODO another typ as int check
+		printf("Geben sie einen Zahl ein : ");
+		scanf("%d", &a);
+		root = calcSquerRoot(a);
+		if(a <= 0){
+			printf("Zahl ist Null oder negativ. Berechnung ist nicht möglich");
+		}else{
+			if(root.muliplicator == 0){
+				printf("Ergebnis: %d\n\n", root.sqrt);
+			}else if(root.muliplicator == -1){
+				printf("Ergennis: sqrt(%d)\n\n", root.sqrt);
+			}else{
+				printf("Ergennis: %d * sqrt(%d)\n\n", root.muliplicator, root.sqrt);	
+			}
+		}
+		
+		
+		printf("Geben sie <w> -> weiter oder <a> -> abbrechen: ");
+		scanf(" %s", &furtherOrCancel);
+	}
+		return 0;
+}
+/*	struct SqrtFromDescrim disc;
+int i, c = 0;
+int b = 0;
+for(i = 1; i < d; i = i + 2){
+		b = b + i;
+		c = c + 1;
+		if(d == b){
+			printf("Diskreminante ohne Multiplicator : %d\n",c);
+			disc.sqrt = c;
+			return disc;
+		}
+	}
+	printf("b = %d c = %d\n",b,c);
+	if(d < b){
+		calcSqrtWithMultip(d);
+	}*/
+	
+	
+	
+	==============================================================================================
+	
+	
+	
+	#include <stdio.h>
+
+/* run this program using the console pauser or add your own getch, system("pause") or input loop */
+
+struct SqrtFromDescrim {
+	int muliplicator;
+	int sqrt;
+};
+
+struct SqrtFromDescrim calcSqrtWithMultip(int zahl);
+struct SqrtFromDescrim calcSqrt(int zahl2);
+void calcFunction(int a, int b, int c);
+struct SqrtFromDescrim calcDiscriminant(int d);
+int calc(int d);
+ 
+void calcFunction(int a, int b, int c){
+	struct SqrtFromDescrim discrem;
+	int discriminant = 0;
+	discriminant = (b * b ) - (4 * a * c);
+	printf("Diskremenant: %d\n", discriminant);
+	discrem = calcDiscriminant(discriminant);
+	if(discrem.muliplicator == 0 && discrem.sqrt == 0){
+		printf("Berechnung ist nicht möglich\n");
+	}else if(discrem.muliplicator == 0 && discrem.sqrt != 0){
+		printf("Diskremenant: %d\n", discrem.sqrt);
+	}else{
+		printf("Diskremenant: %d sqrt(%d)\n", discrem.muliplicator, discrem.sqrt);
+	}
+}
+
+struct SqrtFromDescrim calcDiscriminant(int d){
+	struct SqrtFromDescrim discrem;
+	if( d < 0 ){
+		printf("Die Berechnung der qudratischen Gleichung ist \n");
+		printf("nicht moeglich, da der Dikreminante ist negativ.\n");
+		printf("Diskreminante: %d\n", d);
+		discrem.muliplicator = 0;
+		discrem.sqrt = 0;
+	}else{
+		discrem = calcSqrt(d);		
+	}
+	return discrem;
+}
+
+int calc(int d){
+int i, c, b = 0;
+for(i = 1; i < d; i = i + 2){
+		b = b + i;
+		c = c + 1;
+		if(d == b){
+			return c;
+		}
+	}
+	if(d < b){
+		return 0;
+	}
+}
+struct SqrtFromDescrim calcSqrtWithMultip(int e){
+	struct SqrtFromDescrim disc;
+	int i;
+	int b = 1;
+	int c = 0;
+	int d = 0;
+	for(i = 3; i < e; i = i + 2){
+		b = b + i;
+		c = e % b;
+		if(c == 0){
+			d = e / b;
+			b = calc(b);
+			disc.muliplicator = b;
+			disc.sqrt = d;
+			break;
+		}
+	}if(c != 0){
+		disc.muliplicator = 0;
+		disc.sqrt = c;
+	}
+	return disc;
+}
+
+struct SqrtFromDescrim calcSqrt(int d){
+	struct SqrtFromDescrim disc;
+	int sqrtWithoutMultiplic = 0;
+	sqrtWithoutMultiplic = calc(d);
+	if(sqrtWithoutMultiplic == 0){
+		disc = calcSqrtWithMultip(d);
+	}else{
+		disc.muliplicator = 0;
+		disc.sqrt = sqrtWithoutMultiplic;
+	}
+	return disc;
+}
+
+int main(int argc, char** argv) {
+	int status = 0;
+	int a = 0;
+	int b = 0;
+	int c = 0;
+	char furtherOrCancel = 'w';
+	while(furtherOrCancel == 'w'){
+		printf("Diese Programm berechnet die Nullstellen der quadratische Gleichung\n\n");
+		printf("ax^2 +/- bx^2 +/- c = 0, mit a != 0 \n\n");
+		//TODO another typ as int check
+		printf("Geben sie <a> ein : ");
+		scanf("%d", &a);
+		printf("Geben sie <b> ein : ");
+		scanf("%d", &b);
+		printf("Geben sie <c> ein : ");
+		scanf("%d", &c);
+		calcFunction(a, b, c);
+		printf("Ergennis: x1 = 0, x2 = 0\n");
+		printf("Geben sie <w> -> weiter oder <a> -> abbrechen: ");
+		scanf(" %s", &furtherOrCancel);
+	}
+		return 0;
+}
+/*	struct SqrtFromDescrim disc;
+int i, c = 0;
+int b = 0;
+for(i = 1; i < d; i = i + 2){
+		b = b + i;
+		c = c + 1;
+		if(d == b){
+			printf("Diskreminante ohne Multiplicator : %d\n",c);
+			disc.sqrt = c;
+			return disc;
+		}
+	}
+	printf("b = %d c = %d\n",b,c);
+	if(d < b){
+		calcSqrtWithMultip(d);
+	}*/
+	
