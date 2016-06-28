@@ -1,4 +1,4 @@
-package chapter6
+package chapter06
 
 class Rational(n: Int, d: Int) {
   require(d != 0)

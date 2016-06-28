@@ -1,4 +1,4 @@
-package chapter7
+package chapter07
 
 class MiltiTable {
   def makeRowsSeq(row: Int) =

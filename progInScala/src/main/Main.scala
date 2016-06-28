@@ -1,9 +1,9 @@
 package main
 
-import chapter6.Rational
+import chapter06.Rational
 import chapter04.ChecksumAccumulator
-import chapter7.ForExpression
-import chapter7.MiltiTable
+import chapter07.ForExpression
+import chapter07.MiltiTable
 import chapter10.Element
 import chapter10.Element
 import chapter10.Element
