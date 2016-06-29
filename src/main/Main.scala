@@ -25,6 +25,13 @@ object Main {
     
     println("*****************chapter 3*************")
     
+    val intString = "S000000C000000"
+  
+  println(intString.toInt)
+  
+  println("Int: " + Int.MaxValue)
+  println("Int: " + Long.MaxValue)
+    
     
 //    var newSet = scala.collection.immutable.Set("Gena", "Luda")
 //    
