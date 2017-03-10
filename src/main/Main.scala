@@ -17,6 +17,7 @@ import chapter12.Incrementing
 import chapter12.Doubling
 import chapter15._
 import chapter03.Chapter3
+import chapter06.Rational_10032017
 
 object Main {
 	
@@ -26,45 +27,41 @@ object Main {
     println("*****************chapter 3*************")
     
     
-    var newSet = scala.collection.immutable.Set("Gena", "Luda")
-    
-    newSet += "Artiom"
-   
-    
-    println(newSet)
-    
-    val newSet2 = scala.collection.mutable.Set("Gena", "Luda", "Luda")
-    
-    newSet2 += "Artiom"
-    
-    println(newSet2)
-    
-    val newSet3 = scala.collection.immutable.Set("Gena", "Luda", "Luda")
-    
-    val newSet4 = newSet3 + "Artiom"
-   
-    println(newSet4)
-    
-    def withOfLength(s: String) = s.length.toString.length
-    
-    println(withOfLength("TesteTTettet"))
-    
-    new Chapter3(args)
+//    var newSet = scala.collection.immutable.Set("Gena", "Luda")
+//    
+//    newSet += "Artiom"
+//   
+//    
+//    println(newSet)
+//    
+//    val newSet2 = scala.collection.mutable.Set("Gena", "Luda", "Luda")
+//    
+//    newSet2 += "Artiom"
+//    
+//    println(newSet2)
+//    
+//    val newSet3 = scala.collection.immutable.Set("Gena", "Luda", "Luda")
+//    
+//    val newSet4 = newSet3 + "Artiom"
+//   
+//    println(newSet4)
+//    
+//    def withOfLength(s: String) = s.length.toString.length
+//    
+//    println(withOfLength("TesteTTettet"))
+//    
+//    new Chapter3(args)
     
     
     
     
     println("*****************chapter 6 *************")
     
-    
-    
-    
-    
-    
-    val a = new Rational(4, 5)
-    val b = new Rational(7, 8)
-    val c = new Rational(8, 9)
-    val d = new Rational(11, 10)
+//    val a = new Rational(4, 5)
+//    val b = new Rational(7, 8)
+//    val c = new Rational(8, 9)
+//    val d = new Rational(11, 10)
+    println(new Rational_10032017(2, 4))
     
 //    println(a + b)
 //    println(a * b)
